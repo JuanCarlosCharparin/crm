@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+</head>
+<body>
+    <h1>Listado de productos</h1>
+    <a href="{{ url_for('nuevo_producto') }}">➕ Nuevo producto</a>
+    <br><br>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Categoria</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Codigo</th>
+        </tr>
+        {% for p in productos %}
+        <tr>
+            <td>{{ p[0] }}</td>  
+            <td>{{ p[1] }}</td>  
+            <td>{{ p[2] }}</td>  
+            <td>{{ p[3] }}</td>  
+            <td>{{ p[4] }}</td>  
+            <td>{{ p[5] }}</td>  
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Volver al inicio</a>
+</body>
+</html>

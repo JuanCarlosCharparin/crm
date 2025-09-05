@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if producto %}Editar{% else %}Nuevo{% endif %} Producto</title>
+</head>
+<body>
+    <h1>{% if producto %}Editar{% else %}Nuevo{% endif %} Producto</h1>
+
+    <form method="post">
+        Nombre: <input type="text" name="nombre" value="{{ producto.nombre if producto else '' }}"><br><br>
+        Descripcion: <input type="text" name="descripcion" value="{{ producto.descripcion if producto else '' }}"><br><br>
+        Categoria: <input type="text" name="categoria_id" value="{{ producto.categoria_id if producto else '' }}"><br><br>
+        Precio: <input type="text" name="precio" value="{{ producto.precio if producto else '' }}"><br><br>
+        Stock: <input type="text" name="stock" value="{{ producto.stock if producto else '' }}"><br><br>
+        Codigo de Barras: <input type="text" name="codigo_barras" value="{{ producto.codigo_barras if producto else '' }}"><br><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('productos') }}">⬅ Volver</a>
+</body>
+</html>
